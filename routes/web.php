@@ -1,5 +1,7 @@
 <?php
 
+use Prueba\User;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,5 +15,6 @@
 
 Route::get('/', function () {
     //return view('welcome');
-    return view('inicio');
+    $usuarios = User::all();
+    return view('inicio', compact('usuarios'));
 });
